@@ -1,9 +1,13 @@
+import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <div>
       <Navbar />
+      <HeroSection />
     </div>
   );
 }
+
+export default Home;

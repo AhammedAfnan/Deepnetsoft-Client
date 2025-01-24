@@ -6,7 +6,7 @@ const oswald = Oswald({
     weight: ['400', '500', '700']
 })
 
-export default function Navbar() {
+const Navbar: React.FC = () => {
   return (
     <nav className="bg-customBg text-white p-4 flex justify-around items-center font-oswald">
         <img src="/logo.png" className='h-76px max-w-full' alt="" />
@@ -33,3 +33,5 @@ export default function Navbar() {
     </nav>
   )
 }
+
+export default Navbar;
