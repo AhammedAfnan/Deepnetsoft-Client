@@ -1,7 +1,8 @@
-import HeroSection from "./components/HeroSection";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"
-import MealsSection from "./components/MealsSection";
+import HeroSection from "@/components/HeroSection";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer"
+import MealsSection from "@/components/MealsSection";
+import AddMenu from "@/components/AddMenu"
 
 const Home: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ const Home: React.FC = () => {
       <Navbar />
       <HeroSection />
       <MealsSection />
+      <AddMenu />
       <Footer />
     </div>
   );
