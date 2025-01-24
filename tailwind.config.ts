@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 export default {
   content: [
@@ -8,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        oswald: ['oswald', ...fontFamily.sans],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
