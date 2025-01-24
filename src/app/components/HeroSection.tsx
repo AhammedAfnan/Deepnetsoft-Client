@@ -11,8 +11,8 @@ const HeroSection: React.FC = () => {
         className="absolute h-full w-full left-0 right-0 object-[top_left] object-cover"
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
-        <h1 className="text-4xl font-bold">Menu</h1>
-        <p className="text-lg mt-2">Please take a look at our menu featuring food,drinks,and brunch. If you'd like to place an order, use the "Order Online" button located below the menu.</p>
+        <h1 className="text-5xl font-bold">Menu</h1>
+        <p className="text-lg mt-2">Please take a look at our menu featuring food,drinks,and brunch. If you'd like to <br /> place an order, use the "Order Online" button located below the menu.</p>
       </div>
     </div>
   );

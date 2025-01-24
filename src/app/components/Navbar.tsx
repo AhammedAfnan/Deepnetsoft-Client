@@ -8,7 +8,7 @@ const oswald = Oswald({
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-customBg text-white p-4 flex justify-around items-center font-oswald">
+    <nav className="bg-customBg text-white p-4 flex justify-around items-center">
         <img src="/logo.png" className='h-76px max-w-full' alt="" />
         <ul className="flex space-x-8">
             <li>

@@ -12,9 +12,11 @@ module.exports = {
     extend: {
       fontFamily: {
         oswald: ["oswald", ...fontFamily.sans],
+        kelly: ['Kelly Slab', 'serif'],
       },
       colors: {
         customBg: '#121618', // Custom background color
+        customBlue: '#0796EF',
       },
       height: {
         '76px': '76px', // Custom height
