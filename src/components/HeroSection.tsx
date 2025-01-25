@@ -17,8 +17,9 @@ const HeroSection: React.FC = () => {
           </h1>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl mt-2">
             Please take a look at our menu featuring food, drinks, and brunch.
-            If you'd like to <br className="hidden md:block" /> place an order,
-            use the "Order Online" button located below the menu.
+            If you&apos;d like to <br className="hidden md:block" /> place an
+            order, use the &quot;Order Online&quot; button located below the
+            menu.
           </p>
         </div>
       </div>

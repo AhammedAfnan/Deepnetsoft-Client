@@ -12,7 +12,7 @@ interface CreateCategoryModalProps {
 export default function CreateCategoryModal({
   open,
   onOpenChange,
-  onSuccess
+  // onSuccess
 }: CreateCategoryModalProps) {
   const [values, setValues] = useState({name: '', description: ''})
   const {setCategories} = useCategories()

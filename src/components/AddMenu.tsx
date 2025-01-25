@@ -1,5 +1,5 @@
 "use client";
-import { useState, useCallback, useEffect, Fragment } from "react";
+import { useState, useCallback, Fragment } from "react";
 import Modal from "react-modal";
 import CreateCategoryModal from "./CreateCategoryModal";
 import {useCategories} from "@/context/CategoryContext"
@@ -11,7 +11,7 @@ export default function AddMenu() {
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
   const [category, setCategory] = useState('-1');
   const {categories} = useCategories();
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [menus, setMenus] = useState([
     { name: "", description: "", price: "", category },
   ]);
@@ -113,9 +113,7 @@ export default function AddMenu() {
           Create a menu item
         </h2>
 
-        {isLoading ? (
-          <div>loading...</div>
-        ) : (
+  
           <>
             <div className="mb-3">
               <select
@@ -200,7 +198,6 @@ export default function AddMenu() {
               </div>
             </form>
           </>
-        )}
 
         <button
           onClick={handleClose}
