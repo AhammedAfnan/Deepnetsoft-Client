@@ -24,8 +24,8 @@ export default function AddMenu() {
   const handleClose = useCallback(() => {
     setOpen(false);
     setCategory("");
-    if (categoryModalopen) {
-      setCategoryModalopen(false);
+    if (categoryModalOpen) {
+      setCategoryModalOpen(false);
     }
   }, [setOpen, categoryModalOpen, setCategoryModalOpen]);
 
