@@ -133,7 +133,7 @@ export default function AddMenu() {
                 <option value={-1}>
                   -- Select a cateory or create one --
                 </option>
-                {categories.map((cat) => (
+                {categories?.map((cat) => (
                   <option value={cat._id} key={cat._id}>
                     {cat.name}
                   </option>
