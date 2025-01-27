@@ -14,13 +14,13 @@ const MealsSection: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!selectedCategory) return; // Prevent API call if selectedCategory is null
-
+    
     async function fetchMenu() {
+      if (!selectedCategory) return; // Prevent API call if selectedCategory is null
       try {
         setLoading(true);
         const res = await fetch(
-          `http://localhost:8080/api/menus/${selectedCategory._id}`
+          process.env.NEXT_APP_API_URL+'/menus/${selectedCategory._id}'
         );
         const data = await res.json();
         setMenu(data.payload || []); // Safely handle response payload
@@ -90,7 +90,7 @@ const MealsSection: React.FC = () => {
               <p className="text-center text-white">Loading menu...</p>
             ) : menu && menu.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {menu.map((m) => (
+                {menu.map((m:IMenu) => (
                   <div
                     key={m._id}
                     className="relative text-white border-b-2 border-dotted border-white pb-2"
@@ -114,3 +114,5 @@ const MealsSection: React.FC = () => {
 };
 
 export default MealsSection;
+
+type IMenu = {_id:string;name:string;description:string;price:number}

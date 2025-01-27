@@ -2,7 +2,7 @@
 import { useState, useCallback, Fragment } from "react";
 import Modal from "react-modal";
 import CreateCategoryModal from "./CreateCategoryModal";
-import {useCategories} from "@/context/CategoryContext"
+import {ICategory, useCategories} from "@/context/CategoryContext"
 
 Modal.setAppElement("body");
 
@@ -61,7 +61,7 @@ export default function AddMenu() {
   async function handleSubmit(e: React.ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
     try {
-      const res = await fetch('http://localhost:8080/api/menus/create', {
+      const res = await fetch(`${process.env.NEXT_APP_API_URL}/menus/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -131,7 +131,7 @@ export default function AddMenu() {
                 <option value={-1}>
                   -- Select a cateory or create one --
                 </option>
-                {categories?.map((cat) => (
+                {categories?.map((cat:ICategory) => (
                   <option value={cat._id} key={cat._id}>
                     {cat.name}
                   </option>

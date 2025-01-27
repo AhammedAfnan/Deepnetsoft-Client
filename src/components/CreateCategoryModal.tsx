@@ -6,13 +6,11 @@ import {useCategories} from "@/context/CategoryContext"
 interface CreateCategoryModalProps {
   open: boolean;
   onOpenChange(): void;
-  onSuccess(category: object): void
 }
 
 export default function CreateCategoryModal({
   open,
   onOpenChange,
-  onSuccess
 }: CreateCategoryModalProps) {
   const [values, setValues] = useState({name: '', description: ''})
   const {setCategories} = useCategories()
@@ -24,7 +22,7 @@ export default function CreateCategoryModal({
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    const res = await fetch('http://localhost:8080/api/categories/create', {
+    const res = await fetch(process.env.NEXT_APP_API_URL+'/categories/create', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

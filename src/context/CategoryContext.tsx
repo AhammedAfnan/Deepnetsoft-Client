@@ -1,26 +1,45 @@
-'use client'
+'use client';
 
-import {createContext, useContext, useState} from "react"
+import { createContext, useContext, useState, ReactNode } from 'react';
 
-const CategoryContext = createContext({
-    categories: [],
-    setCategories() {}
-})
+// Define the CategoryContext type
+type CategoryContextType = {
+  categories: ICategory[];
+  setCategories: React.Dispatch<React.SetStateAction<ICategory[]>>;
+};
 
+// Create context with proper type annotations
+const CategoryContext = createContext<CategoryContextType | undefined>(undefined);
+
+// Hook to use the CategoryContext
 export function useCategories() {
-    return useContext(CategoryContext)
+  const context = useContext(CategoryContext);
+  if (!context) {
+    throw new Error('useCategories must be used within a CategoriesProvider');
+  }
+  return context;
 }
 
-export default function CategoriesProvider({children, initialCategories}: React.PropsWithChildren<{
-    initialCategories: ICategory[]
-}>) {
-    const [categories, setCategories] = useState(initialCategories)
+// CategoriesProvider component
+export default function CategoriesProvider({
+  children,
+  initialCategories,
+}: {
+  children: ReactNode;
+  initialCategories: ICategory[];
+}) {
+  const [categories, setCategories] = useState<ICategory[]>(initialCategories);
 
-    return <CategoryContext value={{categories, setCategories}}>{children}</CategoryContext>
+  return (
+    <CategoryContext.Provider value={{ categories, setCategories }}>
+      {children}
+    </CategoryContext.Provider>
+  );
 }
 
+// Define the ICategory type
 export type ICategory = {
-    _id: string
-    name: string
-    description: string
-}
+  _id: string;
+  name: string;
+  description: string;
+};
