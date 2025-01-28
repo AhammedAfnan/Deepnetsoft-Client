@@ -22,7 +22,7 @@ export default function CreateCategoryModal({
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    const res = await fetch(process.env.NEXT_APP_API_URL+'/categories/create', {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL+'/categories/create', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

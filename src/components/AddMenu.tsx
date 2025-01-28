@@ -61,7 +61,7 @@ export default function AddMenu() {
   async function handleSubmit(e: React.ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
     try {
-      const res = await fetch(`${process.env.NEXT_APP_API_URL}/menus/create`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/menus/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

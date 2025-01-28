@@ -20,7 +20,7 @@ const MealsSection: React.FC = () => {
       try {
         setLoading(true);
         const res = await fetch(
-          process.env.NEXT_APP_API_URL+'/menus/${selectedCategory._id}'
+          process.env.NEXT_PUBLIC_API_URL+`/menus/${selectedCategory._id}`
         );
         const data = await res.json();
         setMenu(data.payload || []); // Safely handle response payload
